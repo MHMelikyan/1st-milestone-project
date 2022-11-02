@@ -1,16 +1,15 @@
 
 
 body{
-    background-color: rgb(78, 81, 38);
+    background-color: rgb(105, 109, 55);
     text-align:center;
-    font-family:'Franklin Gothic Medium', 
-    'Arial Narrow', Arial, sans-serif,;
+    font-family:'Franklin Gothic Medium';
     
 }
 
 #header{
     font-size:3em;
-    color: rgb(203, 191, 23);
+    color: rgb(218, 204, 16);
     text-shadow: rgb(1, 12, 24) 0.1em 0.03em 0.1em;
    font-weight: bold;
 }
@@ -19,13 +18,4 @@ body{
 	font-size: 1.9em;
 	color: rgb(163, 184, 83);
 	padding: 50px;
-    text-shadow: rgb(67, 92, 31) 0.1em 0.03em 0.1em;
-}
-footer {
-	color: #789;
-	text-decoration: none;
-}
-
-a.footer:hover {
-	text-decoration: underline;
-}
+    text-shadow: rgb(67, 92, 31) 0.1em 0.03em 0.1em;}
