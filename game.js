@@ -10,11 +10,11 @@ function Rect(x, y, w, h) {
 function Tunnel(pw, ph) {
 	// constants
 	this.resolution = 2; // width of tunnel elements
-	this.maxA = .6; // greatest slope of walls
-	this.maxAVar = .05; // maximum angle variance between steps
-	this.wColor = 'orange '; // wall color
+	this.maxA = .3; // greatest slope of walls
+	this.maxAVar = .5; // maximum angle variance between steps
+	this.wColor = 'rgb(150, 146, 74)'; // wall color
 	this.oColor = '#9AB'; // obstacle color
-	this.bColor = 'green'; // background color
+	this.bColor = 'rgb(163, 184, 8)'; // background color
 	this.startingGap = .5; // starting ratio of gap to height
 	this.maxObCoeff = 3;
 	this.minObSize = 23;
@@ -59,11 +59,11 @@ function Tunnel(pw, ph) {
 				wrapped = true
 				currRect.x += this.w + this.resolution;
 				if (currRect.y == 0) {
-					// it's the upper tunnel
+					// the upper tunnel
 					currRect.h = this.currOffset;
 					if (currRect.x >= this.w - this.resolution) this.lastTopRect = currRect;
 				} else {
-					// it's the lower
+					// the lower
 					currRect.y = this.currOffset + this.currGap;
 					currRect.h = this.h - currRect.y;
 				}
@@ -77,7 +77,7 @@ function Tunnel(pw, ph) {
 		// deal with some obstacles
 		for (var i = 0; i < this.obstacles.length; i++) {
 			currObs = this.obstacles[i];
-			currObs.x -= 2;
+			currObs.x -= 1;
 			if (currObs.x < -this.minObSize) {
 				// remove it
 				pos = this.obstacles.indexOf(currObs);
@@ -165,10 +165,10 @@ Heli.prototype = new Rect();
 Heli.prototype.constructor = Heli;
 function Heli(px, py) {
 	// ivars
-	this.cColor = 'black'; // chopper color
+	this.cColor = 'black';   // chopper color
 	this.velocity = {x: 0, y: 0};
-	this.maxVelocity = {x: 1, y: 1.2};
-	
+	this.maxVelocity = {x: 1, y: .7};
+	this.source = "./assets/helicopter.png"
 	// call super constructer
 	Rect.prototype.constructor.call(this, px, py, 20, 20);
 	
@@ -199,9 +199,11 @@ function Heli(px, py) {
 	
 	// draw the chopper to the passed in canvas
 	this.draw = function(canvas) {
-		canvas.fillStyle = this.cColor;
-		canvas.fillRect(this.x, this.y, this.w, this.h);
-	}
+		const img = new Image()
+
+		img.src = this.source
+		
+		canvas.drawImage(img, this.x, this.y, this.w, this.h,)}
 }
 
 // scorepanel object
