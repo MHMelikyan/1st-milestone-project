@@ -117,7 +117,7 @@ function Tunnel(pw, ph) {
 				return true;
 			}
 		}
-		return false; // we got through okay
+		return false; 
 	}
 	
 	// draw the tunnel to the passed in canvas
@@ -221,7 +221,7 @@ function ScorePanel(p_width, p_height, p_offset, p_maxScore) {
 	this.notification
 	
 	this.draw = function(canvas) {
-		canvas.fillStyle = this.bColor; // background color
+		canvas.fillStyle = this.bColor; 
 		canvas.fillRect(0, this.offset, this.w, this.h);
 		
 		// draw current
