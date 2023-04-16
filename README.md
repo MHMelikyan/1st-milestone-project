@@ -1,4 +1,3 @@
-ject.
 Open the game scene in Unity and hit the play button to run the game.
 Gameplay:
 The objective of the game is to navigate the helicopter through the course and avoid obstacles. The helicopter will move forward automatically, and the player can control its height by pressing the up and down arrow keys. The player will score points for each obstacle they avoid, and the game will end if the player collides with an obstacle.
